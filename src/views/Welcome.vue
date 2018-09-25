@@ -1,7 +1,6 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <TextWithTitle centered interligne="..." title="Bienvenu sur" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"/>
+  <div class="welcome">
+    <TextWithTitle centered interligne="..." title="Bienvenu sur" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
   </div>
 </template>
 
@@ -16,3 +15,30 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
+  height: 100vh;
+  .text-with-title {
+    width: 80vw;
+  }
+}
+@media screen and (min-width: 860px) {
+  .welcome {
+    .text-with-title {
+      width: 60vw;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .welcome {
+    .text-with-title {
+      width: 40vw;
+    }
+  }
+}
+</style>
