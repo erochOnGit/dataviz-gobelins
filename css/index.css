@@ -10,7 +10,8 @@ body {
 
 .welcome {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
   width: 95vw;
   height: 100vh;
@@ -55,4 +56,9 @@ select {
   position: absolute;
   top: 10vh;
   right: 10vw;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
 }
