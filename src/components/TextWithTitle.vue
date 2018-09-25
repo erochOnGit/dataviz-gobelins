@@ -1,6 +1,9 @@
 <template>
-  <div class="text-with-title">
-    <h1 class="text-with-title__title">{{ title }}</h1>
+  <div class="text-with-title" :class="{ centered: centered}">
+    <h1 class="text-with-title__title">
+        <div>{{ title }}</div>
+        <div>{{ interligne }}</div>
+    </h1>
     <div class="text-with-title__content">{{ content }}</div>
   </div>
 </template>
@@ -10,18 +13,26 @@ export default {
   name: "HelloWorld",
   props: {
     title: String,
-    content: String
+    content: String,
+    interligne: String,
+    centered: Boolean
   }
 };
 </script>
 
 <style scoped lang="scss">
 .text-with-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   &__title {
-    font-size: 16em;
+    font-size: calc(3em + 1vw);
   }
   &__content {
-    font-size: 4em;
+    font-size: calc(1em + 1vw);
   }
+}
+.centered {
+  text-align: center;
 }
 </style>
