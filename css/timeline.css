@@ -1,6 +1,7 @@
 #timeline{
     position: fixed;
     top: 15%;
+    z-index: 10;
     /* background-color: #fff; */
  }
 

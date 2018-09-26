@@ -1,12 +1,13 @@
-// Year selected
-let yearSelected = 2018
+let store = {
+    year: 2018
+}
 
 function timeline () {
     
     let container = document.querySelector('#container__timeline'),
         ul = document.querySelector('#container__timeline__ul')
     
-    let yearInText = yearSelected
+    let yearForText = store.year
 
     for (let i = 0; i <= 48; i++) {
 
@@ -26,8 +27,7 @@ function timeline () {
             spanYear.setAttribute('class', 'container__timeline__li__year')
         liNode.appendChild(spanYear)
 
-        //spanYear.innerHTML = yearSelected + 1;
-        spanYear.innerHTML = yearInText--;        
+        spanYear.innerHTML = yearForText--;        
     }
 
     let li = document.querySelectorAll('.container__timeline__ul__li')
@@ -38,7 +38,7 @@ function timeline () {
 
             li[i].classList.remove('active')
 
-            if (li[i].lastElementChild.innerHTML == yearSelected) {
+            if (li[i].lastElementChild.innerHTML == store.year) {
                 li[i].className += " active"
             }
         }
@@ -65,26 +65,26 @@ function timeline () {
         let firstyearOfList = document.querySelector('.container__timeline__ul__li:first-child').lastElementChild.innerHTML,
             lastYearOfList = document.querySelector('.container__timeline__ul__li:last-child').lastElementChild.innerHTML
 
-        if (yearSelected == firstyearOfList--) {
+            /*
+        if (store.year === firstyearOfList--) {
+            
+            store.year = firstyearOfList--
+            //return false
 
-            console.log('++')
+        } else if (store.year === lastYearOfList++) {
             
-            yearSelected = firstyearOfList
-            return false
-
-        } else if (yearSelected == lastYearOfList++) {
-            
-            yearSelected = lastYearOfList
-            return false
-            
+            store.year = lastYearOfList++
+            //return false
         }
-
-        console.log(yearSelected)
+        */
 
         if (Math.sign(e.wheelDeltaY) == 1) {
-            yearSelected++
+            
+            store.year++
+        
         } else {
-            yearSelected--
+            
+            store.year--
         }
 
         changeActiveClass()

@@ -1,0 +1,31 @@
+/* #map{
+    position: fixed;
+    top: 5%; right: 2%; bottom: 5%; left: 2%;
+
+    background-image: url('../img/map.svg');
+    background-position: center center;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+} */
+
+.map__img{
+    position: fixed;
+    top: 5%; right: 2%; bottom: 5%; left: 2%;
+    width: 90%;
+    margin: auto;
+    z-index: 1;
+
+    
+}
+
+#map__canvas{
+    position: fixed;
+    top: 5%; right: 2%; bottom: 5%; left: 2%;
+    width: 90%;
+    margin: auto;
+    
+    /* background-color: rgba(255, 0, 0, .5); */
+
+    z-index: 2;
+}
