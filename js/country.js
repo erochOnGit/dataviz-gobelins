@@ -1,8 +1,8 @@
 // P_2_2_4_01
 
 "use strict";
-let country = "France";
-
+let country = getUrlParam("country");
+console.log(country);
 var maxCount = map(
   getCo2PerCountryPerYear(country, "1960"),
   0,
