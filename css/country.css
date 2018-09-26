@@ -1,0 +1,34 @@
+body {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+body > * {
+  margin: 0 4em;
+}
+canvas {
+  flex: 3;
+}
+.country {
+  flex: 1;
+}
+.text-with-title__title {
+  font-size: 3em;
+}
+.text-with-title__content {
+  font-size: 1em;
+}
+.country .text-with-title {
+  flex: 1;
+}
+/* @media screen and (min-width: 860px) {
+  .country .text-with-title {
+    width: 60vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .country .text-with-title {
+    width: 40vw;
+  }
+} */
