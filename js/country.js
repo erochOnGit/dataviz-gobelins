@@ -1,8 +1,16 @@
 // P_2_2_4_01
 
 "use strict";
+let country = "France";
 
-var maxCount = 1000; // max count of the cirlces
+var maxCount = map(
+  getCo2PerCountryPerYear(country, "1960"),
+  0,
+  100000000,
+  0,
+  1000
+); // max count of the cirlces
+// console.log(getCo2PerCountryPerYear(country, "1960"));
 var currentCount = 1;
 var x = [];
 var y = [];
