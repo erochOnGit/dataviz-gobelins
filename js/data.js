@@ -10,6 +10,13 @@ let map = function(value, minA, maxA, minB, maxB) {
   return ((value - minA) / (maxA - minA)) * (maxB - minB) + minB;
 };
 
+let getCountryList = () => {
+return datas.reduce((acc, cur)=>{
+    if (acc.includes(cur["Country Name"])){
+    }else{acc.push(cur["Country Name"])}
+      return acc
+  },[]);
+}
 let getCo2PerCountryPerYear = (country, year) => {
   let countryData = datas.filter(aCountry => {
     return aCountry["Country Name"] === country;

@@ -20,11 +20,8 @@
 <body>
     <div class="country container">
         <div class="countrySelect">
-            <select name="countrySelect" id="countrySelect" onchange="">
+            <select name="countrySelect" id="countrySelect" onchange="handleSelect(this.value)">
                 <option value="" disabled selected>Pays</option>
-                <option value="">AZERTYUIOP</option>
-                <option value="">B</option>
-                <option value="">C</option>
             </select>
         </div>
         <div class="text-with-title">
@@ -38,7 +35,20 @@
                 ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
         </div>
     </div>
+<script>
 
+let countrySelect = document.getElementById("countrySelect");
+getCountryList().forEach(countryName => {
+  let option = document.createElement("option")
+  option.value = countryName;
+  option.innerHTML = countryName;
+  if(getUrlParam("country")===countryName){
+    option.selected = "selected";
+  }
+  countrySelect.appendChild(option)
+});
+
+</script>
 </body>
 
 </html>

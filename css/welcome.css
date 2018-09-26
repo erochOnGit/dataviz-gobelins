@@ -38,7 +38,7 @@ body {
 select {
   all: unset;
   position: absolute;
-  top: 10vh;
+  top: 4vh;
   right: 10vw;
   border: none;
   border-bottom: 1px solid;
@@ -52,7 +52,7 @@ select {
   width: 0.5em;
   height: 0.5em;
   position: absolute;
-  top: 10vh;
+  top: 4vh;
   right: 10vw;
 }
 

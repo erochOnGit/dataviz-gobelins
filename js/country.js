@@ -2,15 +2,17 @@
 
 "use strict";
 let country = getUrlParam("country");
-console.log(country);
-var maxCount = map(
-  getCo2PerCountryPerYear(country, "1960"),
+let maxCount = 0;
+let setCountryCount = (currentCountry) => {
+  return  map(
+  getCo2PerCountryPerYear(currentCountry, "1990"),
   0,
-  100000000,
+  3000000000,
   0,
   1000
-); // max count of the cirlces
-// console.log(getCo2PerCountryPerYear(country, "1960"));
+  ); // max count of the cirlces
+}
+maxCount = setCountryCount(country);
 var currentCount = 1;
 var x = [];
 var y = [];
@@ -19,11 +21,19 @@ var r = [];
 function setup() {
   createCanvas(600, 600);
   strokeWeight(0.5);
+  init();
+}
 
-  // first circle
+let init = () => {
+  currentCount = 1;
+
+ // first circle
   x[0] = width / 2;
   y[0] = height / 2;
   r[0] = 10;
+  background(255);
+  frameCount = 1;
+  loop();
 }
 
 function draw() {
@@ -63,10 +73,17 @@ function draw() {
     fill(50);
     ellipse(x[i], y[i], r[i] * 2, r[i] * 2);
   }
-
-  if (currentCount >= maxCount) noLoop();
+  if (currentCount >= maxCount) {noLoop();}
 }
 
 function keyReleased() {
   if (key == "s" || key == "S") saveCanvas(gd.timestamp(), "png");
+}
+
+
+let handleSelect = (selectedCountry) => {
+  country = selectedCountry
+  maxCount = setCountryCount(country);
+  maxCount<1 ? maxCount = 10 : null 
+  init();
 }
