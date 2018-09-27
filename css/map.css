@@ -14,18 +14,18 @@
     top: 5%; right: 2%; bottom: 5%; left: 2%;
     width: 90%;
     margin: auto;
-    z-index: 1;
-
-    
+    z-index: 20;
 }
 
 #map__canvas{
     position: fixed;
-    top: 5%; right: 2%; bottom: 5%; left: 2%;
-    width: 90%;
+    /* top: 5%; right: 2%; bottom: 5%; left: 2%;
+    width: 90%; */
     margin: auto;
+
+    background-color: transparent;
     
     /* background-color: rgba(255, 0, 0, .5); */
 
-    z-index: 2;
+    z-index: 1;
 }

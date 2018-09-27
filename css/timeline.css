@@ -37,7 +37,7 @@
 
  .container__timeline__ul__li:hover,
  .container__timeline__ul__li.active{
-     transform: scale(2);
+    transform: scale(2);
  }
 
  .container__timeline__li__span{
@@ -47,9 +47,9 @@
      
      border-radius: 10px;
      background: #ffffff; /* Old browsers */
-     background: -moz-linear-gradient(left, #ffffff 70%, #000000 100%); /* FF3.6-15 */
-     background: -webkit-linear-gradient(left, #ffffff 70%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
-     background: linear-gradient(to right, #ffffff 70%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+     background: -moz-linear-gradient(left, #ffffff 10%, #000000 100%); /* FF3.6-15 */
+     background: -webkit-linear-gradient(left, #ffffff 51%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+     background: linear-gradient(to right, #ffffff 10%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
  }
 
@@ -62,7 +62,7 @@
      margin: auto;
      display: block;
      visibility: hidden;
-     color: #fff;
+     color: #000;
      font-weight: bold;
  }
 
