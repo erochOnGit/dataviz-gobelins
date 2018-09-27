@@ -1,93 +1,89 @@
-let store = {
-    year: 2018
-}
+// console.log(init());
 
-function timeline () {
-    
-    let container = document.querySelector('#container__timeline'),
-        ul = document.querySelector('#container__timeline__ul')
-    
-    let yearForText = store.year
+// function timeline() {
+//   let container = document.querySelector("#container__timeline"),
+//     ul = document.querySelector("#container__timeline__ul");
 
-    for (let i = 0; i <= 48; i++) {
+//   let yearForText = store.year;
 
-        // Create element html
-        let liNode = document.createElement('li');
-            liNode.setAttribute('class', 'container__timeline__ul__li')
+//   for (let i = 0; i <= 48; i++) {
+//     // Create element html
+//     let liNode = document.createElement("li");
+//     liNode.setAttribute("class", "container__timeline__ul__li");
 
-        let li = document.querySelectorAll('.container__timeline__ul__li')
-        ul.appendChild(liNode)
-        //ul.insertBefore(liNode, li.firstChild)
+//     let li = document.querySelectorAll(".container__timeline__ul__li");
+//     ul.appendChild(liNode);
+//     //ul.insertBefore(liNode, li.firstChild)
 
-        let spanText = document.createElement('span');
-            spanText.setAttribute('class', 'container__timeline__li__span')
-        liNode.appendChild(spanText)
+//     let spanText = document.createElement("span");
+//     spanText.setAttribute("class", "container__timeline__li__span");
+//     liNode.appendChild(spanText);
 
-        let spanYear = document.createElement('span');
-            spanYear.setAttribute('class', 'container__timeline__li__year')
-        liNode.appendChild(spanYear)
+//     let spanYear = document.createElement("span");
+//     spanYear.setAttribute("class", "container__timeline__li__year");
+//     liNode.appendChild(spanYear);
 
-        spanYear.innerHTML = yearForText--;        
-    }
+//     spanYear.innerHTML = yearForText--;
+//   }
 
-    let li = document.querySelectorAll('.container__timeline__ul__li')
+//   let li = document.querySelectorAll(".container__timeline__ul__li");
 
-    function changeActiveClass() {
-        // Init active
-        for (let i = 0; i < li.length; i++) {
+//   function changeActiveClass() {
+//     // Init active
+//     for (let i = 0; i < li.length; i++) {
+//       li[i].classList.remove("active");
 
-            li[i].classList.remove('active')
+//       if (li[i].lastElementChild.innerHTML == store.year) {
+//         li[i].className += " active";
+//       }
+//     }
+//   }
 
-            if (li[i].lastElementChild.innerHTML == store.year) {
-                li[i].className += " active"
-            }
-        }
-    }
+//   changeActiveClass();
 
-    changeActiveClass()
+//   // Set active in click
+//   for (let i = 0; i < li.length; i++) {
+//     li[i].addEventListener(
+//       "click",
+//       e => {
+//         for (let o = 0; o < li.length; o++) {
+//           li[o].classList.remove("active");
+//         }
 
-    // Set active in click
-    for (let i = 0; i < li.length; i++) {
+//         e.target.className += " active";
+//       },
+//       false
+//     );
+//   }
 
-        li[i].addEventListener('click', (e) => {
-            
-            for (let o = 0; o < li.length; o++) {
-                li[o].classList.remove('active')
-            }
+//   window.addEventListener("wheel", e => {
+//     let firstyearOfList = document.querySelector(
+//         ".container__timeline__ul__li:first-child"
+//       ).lastElementChild.innerHTML,
+//       lastYearOfList = document.querySelector(
+//         ".container__timeline__ul__li:last-child"
+//       ).lastElementChild.innerHTML;
 
-            e.target.className += " active"
+//     /*
+//         if (store.year === firstyearOfList--) {
 
-        }, false)
-    }
+//             store.year = firstyearOfList--
+//             //return false
 
-    window.addEventListener('wheel', (e) => {
-        
-        let firstyearOfList = document.querySelector('.container__timeline__ul__li:first-child').lastElementChild.innerHTML,
-            lastYearOfList = document.querySelector('.container__timeline__ul__li:last-child').lastElementChild.innerHTML
+//         } else if (store.year === lastYearOfList++) {
 
-            /*
-        if (store.year === firstyearOfList--) {
-            
-            store.year = firstyearOfList--
-            //return false
+//             store.year = lastYearOfList++
+//             //return false
+//         }
+//         */
 
-        } else if (store.year === lastYearOfList++) {
-            
-            store.year = lastYearOfList++
-            //return false
-        }
-        */
+//     if (Math.sign(e.wheelDeltaY) == 1) {
+//       store.year++;
+//     } else {
+//       store.year--;
+//     }
 
-        if (Math.sign(e.wheelDeltaY) == 1) {
-            
-            store.year++
-        
-        } else {
-            
-            store.year--
-        }
-
-        changeActiveClass()
-    })
-}
-timeline()
+//     changeActiveClass();
+//   });
+// }
+// timeline();

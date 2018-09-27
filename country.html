@@ -10,14 +10,20 @@
     <script src="./js/ressource/p5.min.js"></script>
     <script src="./js/ressource/p5.sound.min.js"></script>
     <script src="data.json"></script>
-    <script src="./js/data.js"></script>
-    <script src="./js/country.js"></script>
 
     <link rel="stylesheet" href="./css/welcome.css">
     <link rel="stylesheet" href="./css/country.css">
+    <link rel="stylesheet" href="./css/timeline.css">
+
+
 </head>
 
 <body>
+    <div id="timeline" class="horizontal">
+        <div id="container__timeline">
+            <ul id="container__timeline__ul"></ul>
+        </div>
+    </div>
     <div class="country container">
         <div class="countrySelect">
             <select name="countrySelect" id="countrySelect" onchange="handleSelect(this.value)">
@@ -35,20 +41,23 @@
                 ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
         </div>
     </div>
-<script>
+    <script src="./js/store.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/country.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        let countrySelect = document.getElementById("countrySelect");
+        getCountryList().forEach(countryName => {
+            let option = document.createElement("option")
+            option.value = countryName;
+            option.innerHTML = countryName;
+            if (getUrlParam("country") === countryName) {
+                option.selected = "selected";
+            }
+            countrySelect.appendChild(option)
+        });
 
-let countrySelect = document.getElementById("countrySelect");
-getCountryList().forEach(countryName => {
-  let option = document.createElement("option")
-  option.value = countryName;
-  option.innerHTML = countryName;
-  if(getUrlParam("country")===countryName){
-    option.selected = "selected";
-  }
-  countrySelect.appendChild(option)
-});
-
-</script>
+    </script>
 </body>
 
 </html>

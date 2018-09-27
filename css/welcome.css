@@ -38,10 +38,17 @@ body {
 select {
   all: unset;
   position: absolute;
+  left: 0;
   top: 4vh;
-  right: 10vw;
   border: none;
   border-bottom: 1px solid;
+}
+
+@media screen and (min-width: 610px) {
+  select {
+    left: unset;
+    right: 10vw;
+  }
 }
 
 .countrySelect::after {

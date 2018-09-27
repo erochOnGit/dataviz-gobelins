@@ -14,50 +14,28 @@
 
 <body>
     <div class="container">
-        <div class="welcome">
-            <div class="countrySelect">
-                <select name="countrySelect" id="countrySelect" onchange="">
-                    <option value="" disabled selected>Pays</option>
-                    <option value="">AZERTYUIOP</option>
-                    <option value="">B</option>
-                    <option value="">C</option>
-                </select>
+        <div id="timeline">
+            <div id="container__timeline">
+                <ul id="container__timeline__ul"></ul>
             </div>
-            <div class="text-with-title">
-                <h1 class="text-with-title__title">
-                    <div>Bienvenue sur</div>
-                    <div>...</div>
-                </h1>
-                <div class="text-with-title__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-            </div>
-            <a href="./country.html">
-                <h3>Let's Go</h3>
-            </a>
-            <div id="timeline">
-                <div id="container__timeline">
-                    <ul id="container__timeline__ul"></ul>
-                </div>
-            </div>
+        </div>
 
-            <div id="map">
+        <div id="map">
 
-                <!-- <img src="img/map-points.svg" class="map__img"> -->
-                <!-- <img src="img/map-lines.svg" class="map__img"> -->
-                <canvas id="map__canvas"></canvas>
+            <!-- <img src="img/map-points.svg" class="map__img"> -->
+            <!-- <img src="img/map-lines.svg" class="map__img"> -->
+            <canvas id="map__canvas"></canvas>
 
-            </div>
+        </div>
 
-            <!-- <img src="img/map.svg" id="map"> -->
+        <!-- <img src="img/map.svg" id="map"> -->
 
-            <!-- <canvas id="canvas__map" width="600" height="600"></canvas> -->
+        <!-- <canvas id="canvas__map" width="600" height="600"></canvas> -->
 
-            <!-- <script src="data.json"></script> -->
-            <script src="js/map.canvas.js"></script>
-            <script src="js/index.js"></script>
+        <!-- <script src="data.json"></script> -->
+        <script src="js/map.canvas.js"></script>
+        <script src="js/index.js"></script>
+    </div>
 </body>
 
 </html>

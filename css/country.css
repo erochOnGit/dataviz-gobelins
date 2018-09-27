@@ -3,10 +3,12 @@ body {
   flex-direction: row-reverse;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 10em;
+  justify-content: center;
 }
 
 body > * {
-  margin: 0 4em;
+  margin: 4em 4em 0;
 }
 canvas {
   flex: 3;
@@ -23,6 +25,20 @@ canvas {
 .country .text-with-title {
   flex: 1;
 }
+@media screen and (min-width: 525px) {
+  body {
+    justify-content: unset;
+  }
+  canvas{
+    margin-top:-3vh;
+  }
+}
+ @media screen and (min-width: 860px) {
+  canvas{
+    width: 400px;
+    margin: 4em 4em 0;
+  }
+}
 /* @media screen and (min-width: 860px) {
   .country .text-with-title {
     width: 60vw;
@@ -32,4 +48,4 @@ canvas {
   .country .text-with-title {
     width: 40vw;
   }
-} */
+} 

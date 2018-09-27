@@ -1,77 +1,129 @@
-#timeline{
-    position: fixed;
-    top: 15%;
-    z-index: 10;
-    /* background-color: #fff; */
- }
+#timeline {
+  position: fixed;
+  top: 15%;
+  z-index: 10;
+  /* background-color: #fff; */
+}
 
-#container__timeline{
-     width: 120px;
-     min-height: 360px;
-    /* background-color: #ff6060; */
- }
+#container__timeline {
+  width: 120px;
+  min-height: 360px;
+  /* background-color: #ff6060; */
+}
 
- #container__timeline__ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
- }
+#container__timeline__ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
- .container__timeline__ul__li{
-     position: relative;
-     min-width: 80px;
-     height: 17px;
-     display: flex;
+.container__timeline__ul__li {
+  position: relative;
+  min-width: 80px;
+  height: 17px;
+  display: flex;
 
-     cursor: pointer;
+  cursor: pointer;
 
-     transform-origin: 0% 50%;
-     transition: transform .3s;
- }
+  transform-origin: 80% 50%;
+  transition: transform 0.3s;
+}
 
- .container__timeline__ul__li:before{
-     position: absolute;
-     top: 0; right: 0; bottom: 0; left: 0;
-     content: '';
- }
+.container__timeline__ul__li:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+}
 
- .container__timeline__ul__li:hover,
- .container__timeline__ul__li.active{
-     transform: scale(2);
- }
+.container__timeline__ul__li:hover,
+.container__timeline__ul__li.active {
+  transform: scale(2);
+}
 
- .container__timeline__li__span{
-     width: 40px;
-     height: 2px;
-     margin: auto;
-     
-     border-radius: 10px;
-     background: #ffffff; /* Old browsers */
-     background: -moz-linear-gradient(left, #ffffff 70%, #000000 100%); /* FF3.6-15 */
-     background: -webkit-linear-gradient(left, #ffffff 70%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
-     background: linear-gradient(to right, #ffffff 70%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
- }
+.container__timeline__li__span {
+  width: 40px;
+  height: 2px;
+  margin: auto;
 
- .container__timeline__ul__li:hover > .container__timeline__li__span,
- .container__timeline__ul__li.active > .container__timeline__li__span{
-     width: 70px;
- }
-
- .container__timeline__li__year{
-     margin: auto;
-     display: block;
-     visibility: hidden;
-     color: #fff;
-     font-weight: bold;
- }
-
- .container__timeline__ul__li:hover > .container__timeline__li__year,
- .container__timeline__ul__li.active > .container__timeline__li__year{
-     visibility: visible;
- }
-
- .container__timeline__li__link{
+  border-radius: 10px;
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    #ffffff 70%,
+    #000000 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    #ffffff 70%,
+    #000000 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffffff 70%,
+    #000000 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+}
+.container__timeline__ul__li:hover > .container__timeline__li__span,
+.container__timeline__ul__li.active > .container__timeline__li__span {
+  width: 20px;
+}
+.container__timeline__li__year {
+  margin: auto;
+  display: block;
+  visibility: hidden;
+  color: #fff;
+  font-weight: bold;
+}
+.container__timeline__ul__li:hover > .container__timeline__li__year,
+.container__timeline__ul__li.active > .container__timeline__li__year {
+  visibility: visible;
+}
+.container__timeline__li__link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+/* *
+ * here we set the style for the horizontal timeline */
+#timeline.horizontal {
+  position: relative;
+  margin: 0;
+  top: 10vh;
+}
+#timeline.horizontal li.container__timeline__ul__li {
+  flex-direction: row-reverse;
+  height: 10px;
+}
+#timeline.horizontal span.container__timeline__li__year {
+  color: #000;
+}
+@media screen and (min-width: 525px) {
+  #timeline.horizontal {
+    position: relative;
+  }
+}
+@media screen and (min-width: 860px) {
+  #timeline.horizontal {
+    top: 57vh;
+    right: 25vw;
     position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
- }
+    transform: rotate(-90deg);
+  }
+  #timeline.horizontal li.container__timeline__ul__li {
+    flex-direction: unset;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #timeline.horizontal {
+    top: 57vh;
+    right: 20vw;
+    position: absolute;
+    transform: rotate(-90deg);
+  }
+}
