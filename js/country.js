@@ -1,15 +1,13 @@
 // P_2_2_4_01
 
 "use strict";
-console.log(store);
-let country = getUrlParam("country");
+
 let maxCount = 0;
-let year = "1990";
 let setCountryCount = (currentCountry, year) => {
   return map(
     getCo2PerCountryPerYear(currentCountry, year),
     0,
-    3000000000,
+    30000000000,
     0,
     1000
   ); // max count of the cirlces
@@ -27,9 +25,34 @@ function setup() {
 }
 
 let init = () => {
-  maxCount = setCountryCount(country, year);
+  maxCount = setCountryCount(store.country, store.year);
   currentCount = 1;
 
+  //récupération du titre
+  let countryText = document.createElement("div");
+  countryText.innerHTML = store.country;
+  let countryTitle = document.querySelector(".country .text-with-title__title");
+  countryTitle.removeChild(countryTitle.lastChild);
+  countryTitle.appendChild(countryText);
+
+  //récupération de la quantité de co2
+  let co2Quantity = document.createElement("h2");
+  co2Quantity.innerHTML =
+    "" + getCo2PerCountryPerYear(store.country, store.year) + "KT";
+  let quantityContainer = document.querySelector(
+    ".country .text-with-title__content__quantity"
+  );
+  if (quantityContainer.lastChild) {
+    quantityContainer.removeChild(quantityContainer.lastChild);
+  }
+  quantityContainer.appendChild(co2Quantity);
+
+  document.querySelector("body").style.boxShadow =
+    "1px " +
+    map(maxCount, 0, 50000, 0, 5) +
+    "px " +
+    map(maxCount, 0, 5000, 0, 500) +
+    "px black inset";
   // first circle
   x[0] = width / 2;
   y[0] = height / 2;
@@ -86,10 +109,12 @@ function keyReleased() {
 }
 
 let handleSelect = selectedCountry => {
-  country = selectedCountry;
+  store.country = selectedCountry;
   maxCount < 1 ? (maxCount = 5) : null;
+  console.log("handleSelect", store);
   init();
 };
+
 // let handleTimeline = () => {
 //   init();
 // };
@@ -102,7 +127,7 @@ function timeline() {
 
   let yearForText = store.year;
 
-  for (let i = 0; i <= 48; i++) {
+  for (let i = 0; i <= 28; i++) {
     // Create element html
     let liNode = document.createElement("li");
     liNode.setAttribute("class", "container__timeline__ul__li");

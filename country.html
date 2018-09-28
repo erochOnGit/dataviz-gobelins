@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/welcome.css">
     <link rel="stylesheet" href="./css/country.css">
     <link rel="stylesheet" href="./css/timeline.css">
+    <link rel="stylesheet" href="./css/plexus.css">
 
 
 </head>
@@ -32,32 +33,34 @@
         </div>
         <div class="text-with-title">
             <h1 class="text-with-title__title">
-                <div>Bienvenue sur</div>
+                <div>L'émission de CO² en </div>
             </h1>
-            <div class="text-with-title__content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-        </div>
-    </div>
-    <script src="./js/store.js"></script>
-    <script src="./js/data.js"></script>
-    <script src="./js/country.js"></script>
-    <script src="./js/index.js"></script>
-    <script>
-        let countrySelect = document.getElementById("countrySelect");
-        getCountryList().forEach(countryName => {
-            let option = document.createElement("option")
-            option.value = countryName;
-            option.innerHTML = countryName;
-            if (getUrlParam("country") === countryName) {
-                option.selected = "selected";
-            }
-            countrySelect.appendChild(option)
-        });
+            <div class="text-with-title__content">
+                Interagissez avec le slider et assistez au développement ou encore à la régression de l'émission du CO²
+                dans ce pays.
 
-    </script>
+                <div class="text-with-title__content__quantity"></div>
+            </div>
+        </div>
+        <script src="./js/store.js"></script>
+        <script src="js/particule.js"></script>
+        <script src="js/plexus.js"></script>
+        <script src="./js/data.js"></script>
+        <script src="./js/country.js"></script>
+        <script src="./js/index.js"></script>
+        <script>
+            let countrySelect = document.getElementById("countrySelect");
+            getCountryList().forEach(countryName => {
+                let option = document.createElement("option")
+                option.value = countryName;
+                option.innerHTML = countryName;
+                if (getUrlParam("country") === countryName) {
+                    option.selected = "selected";
+                }
+                countrySelect.appendChild(option)
+            });
+
+        </script>
 </body>
 
 </html>

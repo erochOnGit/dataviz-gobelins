@@ -12,6 +12,7 @@ body > * {
 }
 canvas {
   flex: 3;
+  margin-top: 20vh;
 }
 .country {
   flex: 1;
@@ -30,13 +31,16 @@ canvas {
     justify-content: unset;
   }
   canvas{
-    margin-top:-3vh;
+    margin-top: 0vh;
   }
 }
  @media screen and (min-width: 860px) {
   canvas{
     width: 400px;
     margin: 4em 4em 0;
+  }
+  body{
+    overflow-y: hidden;
   }
 }
 /* @media screen and (min-width: 860px) {

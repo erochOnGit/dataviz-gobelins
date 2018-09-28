@@ -92,9 +92,12 @@
 /* *
  * here we set the style for the horizontal timeline */
 #timeline.horizontal {
-  position: relative;
-  margin: 0;
-  top: 10vh;
+  top: 57vh;
+  bottom: -10vh;
+  right: 15vw;
+  position: absolute;
+  transform: rotate(-90deg);
+  margin-top: 20vh;
 }
 #timeline.horizontal li.container__timeline__ul__li {
   flex-direction: row-reverse;
@@ -103,14 +106,24 @@
 #timeline.horizontal span.container__timeline__li__year {
   color: #000;
 }
+#timeline.horizontal .container__timeline__ul__li.hover,
+#timeline.horizontal .container__timeline__ul__li.active {
+  transform: scale(1.5);
+}
 @media screen and (min-width: 525px) {
   #timeline.horizontal {
     position: relative;
+    margin: 0;
+    right: 0vw;
+    top: 10vh;
+    margin-top: unset;
+    transform: rotate(0deg);
   }
 }
-@media screen and (min-width: 860px) {
+@media screen and (min-width: 930px) {
   #timeline.horizontal {
     top: 57vh;
+    bottom: -10vh;
     right: 25vw;
     position: absolute;
     transform: rotate(-90deg);
@@ -122,6 +135,7 @@
 @media screen and (min-width: 1200px) {
   #timeline.horizontal {
     top: 57vh;
+    bottom: -10vh;
     right: 20vw;
     position: absolute;
     transform: rotate(-90deg);
