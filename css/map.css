@@ -1,31 +1,78 @@
-/* #map{
+#header{
     position: fixed;
-    top: 5%; right: 2%; bottom: 5%; left: 2%;
+    top: 0%; right: 0%; bottom: 0%; left: 0%;
+    height: 5%;
+    background-color: #fff;
+    z-index: 3;
+}
 
-    background-image: url('../img/map.svg');
+#map{
+    position: fixed;
+    top: 5%; right: 5%; bottom: 5%; left: 5%;
+    width: 90%;
+    overflow: hidden;
+    
+    /*
+    background-image: url('../img/map.png');
     background-position: center center;
     background-size: 90%;
     background-repeat: no-repeat;
-    object-fit: cover;
-} */
+    object-fit: cover; */
+
+    background-color: #fff;
+}
 
 .map__img{
     position: fixed;
-    top: 5%; right: 2%; bottom: 5%; left: 2%;
     width: 90%;
-    margin: auto;
-    z-index: 20;
+    z-index: 1;
 }
 
-#map__canvas{
+.map__canvas{
     position: fixed;
-    /* top: 5%; right: 2%; bottom: 5%; left: 2%;
-    width: 90%; */
-    margin: auto;
-
-    background-color: transparent;
+    /*width: 100%;*/
     
     /* background-color: rgba(255, 0, 0, .5); */
 
-    z-index: 1;
+    z-index: 0;
+}
+
+
+
+.map__canvas.map__canvas__USSouth{
+    bottom: 5%;
+    left: 25%;
+}
+
+.fake__map__canvas__USSouth{
+    width: 350px;
+    height: 520px;
+    bottom: 5%;
+    left: 25%;
+}
+
+.map__canvas.map__canvas__europe{
+    top: 40%;
+    left: 45%;
+    transform: rotate(-30deg);
+}
+
+.map__canvas.map__canvas__russia{
+    top: -5%;
+    right: 7%;
+    transform: rotate(-40deg);
+}
+
+.map__canvas.map__canvas__australia{
+    bottom: 8vh;
+    right: 14vw;
+    /* transform: rotate(-40deg); */
+}
+
+#left{
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: 5%;  
+    background-color: #fff;
+    z-index: 5;
 }

@@ -19,12 +19,26 @@
         </div>
     </div>
 
+    <header id="header"></header>
+    <div id="left"></div>
+
     <div id="map">
 
-        <canvas id="map__canvas" width="600" height="600"></canvas>
+        <canvas class="map__canvas map__canvas__USNorth" width="975" height="640"></canvas>
+        <!-- <div class="fake__map__canvas__USNorth"></div> -->
 
-        <img src="img/map-lines.svg" class="map__img">
-        <img src="img/map-points.svg" class="map__img">
+        <canvas class="map__canvas map__canvas__USSouth" width="350" height="520"></canvas>
+        <!-- <div class="fake__map__canvas__USSouth"></div> -->
+        
+        <canvas class="map__canvas map__canvas__europe" width="320" height="600"></canvas>
+        
+        <canvas class="map__canvas map__canvas__russia" width="1000" height="900"></canvas>
+        
+        <canvas class="map__canvas map__canvas__australia" width="250" height="270"></canvas>
+
+        <img src="img/map.png" class="map__img">
+
+        <!-- <img src="img/map-points.svg" class="map__img"> -->
 
     </div>
 
@@ -32,9 +46,10 @@
 
     <!-- <canvas id="canvas__map" width="600" height="600"></canvas> -->
 
-    <!-- <script src="data.json"></script> -->
-    <script src="js/map.canvas.js"></script>
+    <script src="data.json"></script>
+    <script src="js/data.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/map.canvas.js"></script>
 </body>
 
 </html>

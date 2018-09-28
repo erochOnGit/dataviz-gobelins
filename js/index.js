@@ -1,5 +1,5 @@
 let store = {
-    year: 2018
+    year: 2015
 }
 
 function timeline () {
@@ -9,7 +9,7 @@ function timeline () {
     
     let yearForText = store.year
 
-    for (let i = 0; i <= 48; i++) {
+    for (let i = 0; i <= 20; i++) {
 
         // Create element html
         let liNode = document.createElement('li');
@@ -57,6 +57,8 @@ function timeline () {
 
             e.target.className += " active"
 
+            store.year = e.target.lastElementChild.innerHTML
+
         }, false)
     }
 
@@ -64,6 +66,8 @@ function timeline () {
         
         let firstyearOfList = document.querySelector('.container__timeline__ul__li:first-child').lastElementChild.innerHTML,
             lastYearOfList = document.querySelector('.container__timeline__ul__li:last-child').lastElementChild.innerHTML
+
+        
 
             /*
         if (store.year === firstyearOfList--) {
